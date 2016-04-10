@@ -1,4 +1,4 @@
-CC=g++
+CC=tutg++
 
 all:	Assignment3.o Mydate.o
 	$(CC) Assignment3.o Mydate.o -o Assignment3

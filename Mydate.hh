@@ -1,5 +1,7 @@
 #include <iostream>
-using namespace std;
+#include <string>
+using std::string;
+using std::vector;
 
 struct EventSpec
 {

@@ -2,10 +2,13 @@
 #include <string>
 #include <vector>
 #include "Mydate.hh"
-using namespace std;
+using std::string;
+using std::vector;
+using std::endl;
+using std::cout;
 
 // Default constructor
-MyDate::MyDate():day(1),month(1),year(1754),weekday(-1){};
+MyDate::MyDate():day(1),month(1),year(1754),weekday(-1){}
 
 // Constructor
 MyDate::MyDate(int d,int m,int y):day(d),month(m),year(y)
@@ -192,7 +195,7 @@ string MyDate::get_events(vector<EventSpec> &MyHappenings)
 {
 	string events;
 	int count=0;
-	for(int i=0;i<MyHappenings.size();i++)
+	for(unsigned long i=0;i<MyHappenings.size();i++)
 	{
 		if(MyHappenings[i].day==0 or MyHappenings[i].day==this->day or (check_last() and MyHappenings[i].day==-1))
 		{

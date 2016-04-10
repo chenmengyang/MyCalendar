@@ -3,7 +3,13 @@
 #include <fstream>
 #include <sstream>
 #include "Mydate.hh"
-using namespace std;
+using std::string;
+using std::vector;
+using std::endl;
+using std::cout;
+using std::ifstream;
+using std::cin;
+using std::istringstream;
 
 // read a date file into vector of events.
 void readfile(const string &filename,vector<EventSpec> &E)
@@ -21,7 +27,8 @@ void readfile(const string &filename,vector<EventSpec> &E)
 		string line;
 		getline(file,line);
 		if(file.eof()) break;
-		if(line[0]=='#' or line.empty()) continue;
+		if(line.empty()) continue;
+		if(line[0]=='#') continue;
 		// fields
 		string day;
 		string month;
@@ -29,7 +36,7 @@ void readfile(const string &filename,vector<EventSpec> &E)
 		string weekday;
 		string event;
 		//
-		int pos=line.find(':');
+		unsigned long pos=line.find(':');
 		string line1 = line.substr(0,pos);
 		string line2 = line.substr(pos+1,line.length());
 		istringstream ss1(line1);
