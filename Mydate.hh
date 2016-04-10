@@ -35,6 +35,4 @@ public:
 
 bool check_input_date(const MyDate& d);
 
-void readfile(const string &filename,vector<EventSpec> &E);
-
 bool is_leap(int y);
